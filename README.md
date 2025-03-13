@@ -1,2 +1,30 @@
 # litepms
+
 LitePMS Lua SDK
+
+Список методов:
+
+getHotelInfo
+getBookingFields
+getBookings
+getBooking
+createBooking
+updateBooking
+getClients
+getClient
+createClient
+getRooms
+getCategories
+getRoomRates
+getCatRates
+getRates
+getOccupancy
+getCashboxTransaction
+getFreeRooms
+getFreeRoomsByDates
+searchBooking
+getDoc
+getDocTemplate
+createCoupon
+updateCoupon
+createInvoice
