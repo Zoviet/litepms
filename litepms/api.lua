@@ -27,7 +27,7 @@ log.level = 'trace'
 
 function query(data)
 	if not data then return _M.auth end
-	local str = _M.auth..'&'
+	local str = _M.auth
 	for k,v in pairs(data) do str = str..'&'..k..'='..v end
 	return str
 end
@@ -37,7 +37,7 @@ function get_result(str,url)
 	if result then
 		_M.result = json.decode(str)
 		if _M.result.status and  _M.result.status == 'error' then
-			log.error(url..':'.._M.result.error)
+			log.error(url..':'..json.encode(_M.result.error))
 			return nil,	_M.result.error
 		end
 	else				
@@ -45,6 +45,12 @@ function get_result(str,url)
 		return nil,	err
 	end	
 	return _M.result
+end
+
+function poster(data)
+	local result = {}
+	for i,k in pairs(data) do table.insert(result, i..'='..k) end
+	return table.concat(result,'&')
 end
 
 function _M.get(url,data)
@@ -64,29 +70,35 @@ function _M.get(url,data)
 	local ok, err = c:perform()	
 	c:close()
 	if not ok then return nil, err end
-	return get_result(str,url)
+	local res,err = get_result(str,url)
+	if not res then return nil,err end
+	if res.status ~= 'success' then return nil, 'Неудача добавления/обновления' end
+	return res.data
 end
 
-function _M.post(url,add)
+function _M.post(url,data,add)
 	local str = ''
 	url = _M.base..url..query(add)
 	local headers = {
-		'Content-type: application/json',
+		'Content-type: application/x-www-form-urlencoded',
 		'Accept: application/json'
 	}
 	local c = cURL.easy{		
 		url = url,		
 		post = true,
-		--postfields = json.encode(data),		
+		postfields = poster(data),	
 		httpheader  = headers,
-		writefunction = function(str)		
+		writefunction = function(st)		
 			str = str..st
 		end
 	}
 	local ok, err = c:perform()	
 	c:close()
 	if not ok then return nil, err end
-	return get_result(str,url)
+	local res,err = get_result(str,url)
+	if not res then return nil,err end
+	if not res.success then return nil, 'Неудача добавления/обновления' end
+	return res.response
 end
 
 -- Получение информации об объекте.
@@ -112,7 +124,7 @@ end
 -- Получение информации о конкретном бронировании. Назначение полей описано в методе getBookingFields.
 
 function _M.booking.get(id)	
-	return _M.get('getBookings',{['id']=id})
+	return _M.get('getBooking',{['id']=id})
 end
 
 -- Создание бронирования. При создании бронирования может быть создана запись о клиенте, поэтому отдельный запрос на создание клиента выполнять не требуется.
@@ -124,14 +136,21 @@ function _M.booking.create(data)
 	data.person = data.person or 0 
 	if not data.date_in then return nil, 'Не указано время заезда' else data.date_in = date(data.date_in):fmt("%Y-%m-%d") end
 	if not data.date_out then return nil, 'Не указано время заезда' else data.date_out = date(data.date_out):fmt("%Y-%m-%d") end
-	return _M.post('createBooking',data)
+	return _M.post('createBooking',data)	
 end
 
 -- Обновление информации о бронировании и клиенте.
 
 function _M.booking.update(id,data)
-	if data then data.id = id else return nil, 'Не переданы данные для обновления брони' end
+	if data then data.id = id else return nil, 'Не передан id для обновления брони' end
 	return _M.post('updateBooking',data)
+end
+
+-- Перевод брони в статус "отменено"
+
+function _M.booking.cancel(id)
+	if not id then return nil, 'Не передан id брони для ее отмены' end
+	return _M.post('updateBooking',{['id'] = id, ['status_id'] = 3})
 end
 
 -- Получение списка клиентов. Возможно использование фильтра. Параметры передаются методом GET.

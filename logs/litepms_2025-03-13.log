@@ -1,0 +1,50 @@
+[ERROR Thu Mar 13 14:07:00 2025] ./litepms/api.lua:40: https://litepms.ru/api/getBookings?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b&:start or finish is not defined
+[ERROR Thu Mar 13 14:11:10 2025] ./litepms/api.lua:40: https://litepms.ru/api/getBookings?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b&:start or finish is not defined
+[ERROR Thu Mar 13 14:12:54 2025] ./litepms/api.lua:40: https://litepms.ru/api/getBookings?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:start or finish is not defined
+[ERROR Thu Mar 13 14:15:10 2025] ./litepms/api.lua:42: https://litepms.ru/api/getBookings?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:start or finish is not defined
+[ERROR Thu Mar 13 14:17:04 2025] ./litepms/api.lua:40: https://litepms.ru/api/getBookings?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:start or finish is not defined
+[ERROR Thu Mar 13 14:18:05 2025] ./litepms/api.lua:40: https://litepms.ru/api/getBookings?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:start or finish is not defined
+[ERROR Thu Mar 13 14:20:52 2025] ./litepms/api.lua:40: https://litepms.ru/api/getBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:reservation id is not defined
+[ERROR Thu Mar 13 15:30:54 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Вы не указали дату выезда","Вы не указали количество мест","Вы не указали имя клиента"]
+[ERROR Thu Mar 13 15:31:50 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Вы не указали дату выезда","Вы не указали количество мест","Вы не указали имя клиента"]
+[ERROR Thu Mar 13 15:39:02 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Дата выезда должна быть позже даты заезда"]
+[ERROR Thu Mar 13 15:46:31 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 1)"]
+[ERROR Thu Mar 13 15:49:48 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 1)"]
+[ERROR Thu Mar 13 15:51:04 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 1)"]
+[ERROR Thu Mar 13 16:06:49 2025] ./litepms/api.lua:40: https://litepms.ru/api/updateBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:"reservation not found"
+[ERROR Thu Mar 13 16:06:49 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 1)"]
+[ERROR Thu Mar 13 16:12:08 2025] ./litepms/api.lua:40: https://litepms.ru/api/updateBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:"reservation not found"
+[ERROR Thu Mar 13 16:12:09 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 1)"]
+[ERROR Thu Mar 13 16:17:22 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 2)"]
+[ERROR Thu Mar 13 16:18:35 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 2)"]
+[ERROR Thu Mar 13 17:23:53 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 2) (INTERNAL ID: 4832741)"]
+[ERROR Thu Mar 13 18:08:18 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 2) (INTERNAL ID: 4832741)"]
+[ERROR Thu Mar 13 19:18:54 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 2) (INTERNAL ID: 4832741)"]
+[ERROR Thu Mar 13 19:20:08 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 2) (INTERNAL ID: 4832741)"]
+[ERROR Thu Mar 13 19:20:37 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 2) (INTERNAL ID: 4832741)"]
+[ERROR Thu Mar 13 19:22:41 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 2) (INTERNAL ID: 4832741)"]
+[ERROR Thu Mar 13 19:22:54 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 3) (INTERNAL ID: 4833354)"]
+[ERROR Thu Mar 13 19:25:44 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 4) (INTERNAL ID: 4833355)"]
+[ERROR Thu Mar 13 19:26:55 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 5) (INTERNAL ID: 4833369)"]
+[ERROR Thu Mar 13 19:27:56 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 6) (INTERNAL ID: 4833370)"]
+[ERROR Thu Mar 13 19:27:57 2025] ./litepms/api.lua:40: https://litepms.ru/api/getBookings?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b&start=1970-02-25&finish=2025-03-13:"start should be later 01-01-2015"
+[ERROR Thu Mar 13 19:28:15 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 7) (INTERNAL ID: 4833376)"]
+[ERROR Thu Mar 13 19:29:50 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 8) (INTERNAL ID: 4833379)"]
+[ERROR Thu Mar 13 19:31:18 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 9) (INTERNAL ID: 4833385)"]
+[ERROR Thu Mar 13 19:31:43 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 10) (INTERNAL ID: 4833388)"]
+[ERROR Thu Mar 13 19:32:16 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 11) (INTERNAL ID: 4833391)"]
+[ERROR Thu Mar 13 19:33:04 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 12) (INTERNAL ID: 4833394)"]
+[ERROR Thu Mar 13 19:33:23 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 13) (INTERNAL ID: 4833399)"]
+[ERROR Thu Mar 13 19:35:11 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 14) (INTERNAL ID: 4833402)"]
+[ERROR Thu Mar 13 19:35:59 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 15) (INTERNAL ID: 4833409)"]
+[ERROR Thu Mar 13 19:36:48 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 16) (INTERNAL ID: 4833411)"]
+[ERROR Thu Mar 13 19:37:42 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 17) (INTERNAL ID: 4833412)"]
+[ERROR Thu Mar 13 19:38:02 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 18) (INTERNAL ID: 4833413)"]
+[ERROR Thu Mar 13 19:38:34 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 19) (INTERNAL ID: 4833414)"]
+[ERROR Thu Mar 13 19:39:15 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 20) (INTERNAL ID: 4833417)"]
+[ERROR Thu Mar 13 19:39:48 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 21) (INTERNAL ID: 4833419)"]
+[ERROR Thu Mar 13 19:40:41 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 22) (INTERNAL ID: 4833422)"]
+[ERROR Thu Mar 13 19:41:21 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 23) (INTERNAL ID: 4833428)"]
+[ERROR Thu Mar 13 19:42:16 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 24) (INTERNAL ID: 4833431)"]
+[ERROR Thu Mar 13 19:44:03 2025] ./litepms/api.lua:40: https://litepms.ru/api/createBooking?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b:["Выбранные даты перекрывают 1 бронь (ID: 25) (INTERNAL ID: 4833435)"]
+[ERROR Thu Mar 13 19:44:05 2025] ./litepms/api.lua:40: https://litepms.ru/api/getBookings?login=hh24&hash=317f72bddcf2ebcaf6905b186486d88b&start=2025-03-13&finish=2025-03-15:"finish must be earlier2025-03-14"
