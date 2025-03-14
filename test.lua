@@ -4,12 +4,7 @@ local date = require("date")
 
 local methods = {
 	api.hotel.info(),
-	api.booking.fields(),
-	api.bookings.get(),
-	--api.bookings.get(date():adddays(-2):fmt("%Y-%m-%d"),date():fmt("%Y-%m-%d")),
-	--api.booking.get(),
-	api.booking.cancel(4832620),
-		
+	api.booking.fields()		
 }
 
 function test_booking()
@@ -26,21 +21,25 @@ function test_booking()
 		api.booking.cancel(string.match(err[1],'%(INTERNAL ID: (%d+)%)')) 
 		return test_booking()
 	end
-	api.booking.get(res.id)
-	local bookings,err = api.bookings.get(start,ends)
-	print(err)
-	print(json.encode(bookings))
+	print(json.encode(res))
+	local booking = api.booking.get(res.id)
+	local bookings,err = api.bookings.period(start,ends)
+	if bookings.data then
+		for _,book in pairs(bookings.data) do
+			if booking.booking_id == book.booking_id then print('Success') end
+		end
+	end
+	api.booking.cancel(res.id) 
 end
 
---api.booking.cancel(4832741),
 test_booking()
 
---for _,method in pairs(methods) do
-	print('-------------------------------\n\n')
-	--local result,err = method
-	--print (err)
-	--print (json.encode(result))
---end
+local room = api.room.get(68205)
+
+for _,method in pairs(methods) do
+	local result,err = method
+	if not result then print(err) end
+end
 
 
 

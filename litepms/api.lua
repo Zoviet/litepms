@@ -72,7 +72,7 @@ function _M.get(url,data)
 	if not ok then return nil, err end
 	local res,err = get_result(str,url)
 	if not res then return nil,err end
-	if res.status ~= 'success' then return nil, 'Неудача добавления/обновления' end
+	if res.status ~= 'success' then return nil, 'Неудача получения данных' end
 	return res.data
 end
 
@@ -97,7 +97,10 @@ function _M.post(url,data,add)
 	if not ok then return nil, err end
 	local res,err = get_result(str,url)
 	if not res then return nil,err end
-	if not res.success then return nil, 'Неудача добавления/обновления' end
+	if res.status and res.status ~= 'success' then return nil, 'Неудача получения данных' end
+	if not res.status and not res.success then return nil, 'Неудача добавления/обновления' end
+	if res.page then return {['page'] = res.page, ['pages'] = res.pages, ['count'] = res.count, ['data'] = res.data} end
+	if res.data then return res.data end
 	return res.response
 end
 
@@ -252,6 +255,18 @@ function _M.booking.search(data)
 	if not data.date_in then return nil, 'Не указана начальная дата периода' else data.date_in = date(data.date_in):fmt("%Y-%m-%d") end
 	if not data.date_out then return nil, 'Не указана конечная дата периода' else data.date_out = date(data.date_out):fmt("%Y-%m-%d") end
 	return _M.post('searchBooking',data)
+end
+
+function _M.booking.search(data)
+	if not data.from_date then return nil, 'Не указана начальная дата периода' else data.date_in = date(data.date_in):fmt("%Y-%m-%d") end
+	if not data.to_date then return nil, 'Не указана конечная дата периода' else data.date_out = date(data.date_out):fmt("%Y-%m-%d") end
+	return _M.post('searchBooking',data)
+end
+
+function _M.bookings.period(start,finish)
+	if start then start = date(start):fmt("%Y-%m-%d") else start = date():fmt("%Y-%m-%d") end
+	if finish then finish = date(finish):fmt("%Y-%m-%d") else finish = date():adddays(30):fmt("%Y-%m-%d") end
+	return _M.booking.search({['from_date']=start,['to_date']=finish})
 end
 
 -- Получение заполненной печатной формы в формате PDF или HTML.
