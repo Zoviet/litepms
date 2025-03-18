@@ -119,7 +119,7 @@ end
 -- Получение информации о всех бронированиях, в которых происходили изменения в заданный промежуток времени. Возвращается список ID бронирований. Без параметров - брони на месяц вперед от даты запроса.
 
 function _M.bookings.get(start,finish)
-	if start then start = date(start):fmt("%Y-%m-%d") else start = date():adddays(-30):fmt("%Y-%m-%d") end
+	if start then start = date(start):fmt("%Y-%m-%d") else start = date():adddays(-1):fmt("%Y-%m-%d") end
 	if finish then finish = date(finish):fmt("%Y-%m-%d") else finish = date():fmt("%Y-%m-%d") end
 	return(_M.get('getBookings',{['start']=start,['finish']=finish}))
 end
@@ -252,14 +252,8 @@ end
 -- Поиск броней по указанным параметрам. Все параметры в запросе должны передаваться методом POST
 
 function _M.booking.search(data)
-	if not data.date_in then return nil, 'Не указана начальная дата периода' else data.date_in = date(data.date_in):fmt("%Y-%m-%d") end
-	if not data.date_out then return nil, 'Не указана конечная дата периода' else data.date_out = date(data.date_out):fmt("%Y-%m-%d") end
-	return _M.post('searchBooking',data)
-end
-
-function _M.booking.search(data)
-	if not data.from_date then return nil, 'Не указана начальная дата периода' else data.date_in = date(data.date_in):fmt("%Y-%m-%d") end
-	if not data.to_date then return nil, 'Не указана конечная дата периода' else data.date_out = date(data.date_out):fmt("%Y-%m-%d") end
+	if not data.from_date then return nil, 'Не указана начальная дата периода' else data.from_date = date(data.from_date):fmt("%Y-%m-%d") end
+	if not data.to_date then return nil, 'Не указана конечная дата периода' else data.to_date = date(data.to_date):fmt("%Y-%m-%d") end
 	return _M.post('searchBooking',data)
 end
 
