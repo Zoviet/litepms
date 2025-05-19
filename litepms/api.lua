@@ -25,14 +25,14 @@ _M.cashbox = {}
 log.outfile = 'logs/litepms_'..os.date('%Y-%m-%d')..'.log' 
 log.level = 'trace'	
 
-function query(data)
+local function query(data)
 	if not data then return _M.auth end
 	local str = _M.auth
 	for k,v in pairs(data) do str = str..'&'..k..'='..v end
 	return str
 end
 
-function get_result(str,url)
+local function get_result(str,url)
 	local result, err = pcall(json.decode,str)
 	if result then
 		_M.result = json.decode(str)
@@ -47,7 +47,7 @@ function get_result(str,url)
 	return _M.result
 end
 
-function poster(data)
+local function poster(data)
 	local result = {}
 	for i,k in pairs(data) do table.insert(result, i..'='..k) end
 	return table.concat(result,'&')
@@ -68,7 +68,7 @@ function _M.get(url,data)
 		end
 	}
 	local ok, err = c:perform()	
-	c:close()
+	c:close()	
 	if not ok then return nil, err end
 	local res,err = get_result(str,url)
 	if not res then return nil,err end
@@ -119,9 +119,9 @@ end
 -- Получение информации о всех бронированиях, в которых происходили изменения в заданный промежуток времени. Возвращается список ID бронирований. Без параметров - брони на месяц вперед от даты запроса.
 
 function _M.bookings.get(start,finish)
-	if start then start = date(start):fmt("%Y-%m-%d") else start = date():adddays(-1):fmt("%Y-%m-%d") end
-	if finish then finish = date(finish):fmt("%Y-%m-%d") else finish = date():fmt("%Y-%m-%d") end
-	return(_M.get('getBookings',{['start']=start,['finish']=finish}))
+	if start then start = date(start):fmt("%Y-%m-%d %T") else start = date():adddays(-1):fmt("%Y-%m-%d %T") end
+	if finish then finish = date(finish):fmt("%Y-%m-%d %T") else finish = date():fmt("%Y-%m-%d %T") end
+	return _M.get('getBookings',{['start']=start,['finish']=finish})
 end
 
 -- Получение информации о конкретном бронировании. Назначение полей описано в методе getBookingFields.
