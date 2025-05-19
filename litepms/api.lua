@@ -2,6 +2,7 @@ local json = require('cjson')
 local cURL = require("cURL")
 local date = require("date")
 local log = require('utils.log')
+local url = require('utils.url')
 local config = require('config.litepms')
 
 local _M = {}
@@ -119,8 +120,8 @@ end
 -- Получение информации о всех бронированиях, в которых происходили изменения в заданный промежуток времени. Возвращается список ID бронирований. Без параметров - брони на месяц вперед от даты запроса.
 
 function _M.bookings.get(start,finish)
-	if start then start = date(start):fmt("%Y-%m-%d %T") else start = date():adddays(-1):fmt("%Y-%m-%d %T") end
-	if finish then finish = date(finish):fmt("%Y-%m-%d %T") else finish = date():fmt("%Y-%m-%d %T") end
+	if start then start = date(start):fmt("%Y-%m-%d") else start = date():adddays(-1):fmt("%Y-%m-%d") end
+	if finish then finish = date(finish):fmt("%Y-%m-%d") else finish = date():fmt("%Y-%m-%d") end
 	return _M.get('getBookings',{['start']=start,['finish']=finish})
 end
 
