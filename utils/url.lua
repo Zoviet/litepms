@@ -18,6 +18,14 @@ function _M.encode(url)
   return url
 end
 
+function _M.litepms_encode(url)
+  if url == nil then
+    return
+  end
+  url = url:gsub(" ", char_to_hex)  
+  return url
+end
+
 _M.decode = function(url)
   if url == nil then
     return
